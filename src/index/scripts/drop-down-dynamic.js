@@ -53,8 +53,7 @@ export function dropDownDynamic(selector, options) {
          event.stopPropagation();
 
          if(list.classList.contains('drop-down-menu__list_expand')) {
-            list.classList.remove('drop-down-menu__list_expand');
-            document.removeEventListener('click', close);
+           close();
          } else {
             list.classList.add('drop-down-menu__list_expand');
             document.addEventListener('click', close);
