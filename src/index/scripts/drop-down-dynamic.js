@@ -35,15 +35,30 @@ export function dropDownDynamic(selector, options) {
       }
    }
 
+   function close() {
+      console.log('CLOSED');
+      list.classList.remove('drop-down-menu__list_expand');
+      document.removeEventListener('click', close);
+   }
+
    function hendleEvents() {
       list.addEventListener('click', function(event) {
          console.log(event.target.textContent);
          btn.textContent = event.target.textContent;
          list.classList.remove('drop-down-menu__list_expand');
+         event.stopPropagation();
       })
 
       btn.addEventListener('click', function() {
-         list.classList.toggle('drop-down-menu__list_expand');
+         event.stopPropagation();
+
+         if(list.classList.contains('drop-down-menu__list_expand')) {
+            list.classList.remove('drop-down-menu__list_expand');
+            document.removeEventListener('click', close);
+         } else {
+            list.classList.add('drop-down-menu__list_expand');
+            document.addEventListener('click', close);
+         }
       });
    }
 
