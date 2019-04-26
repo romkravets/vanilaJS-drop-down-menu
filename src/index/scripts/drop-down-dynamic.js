@@ -11,7 +11,16 @@ export function dropDownDynamic(selector, options) {
       btn = document.createElement('button');
       list = document.createElement('ul');
       btn.textContent = 'Toggle';
+      menuParent.classList.add(DROP_DOWN_MENU);
+      btn.classList.add(BTN_CLASS_NAME);
+      list.classList.add(LIST_CLASS_NAME);
 
+      menuParent.appendChild(btn);
+      menuParent.appendChild(list);
+
+   }
+
+   function renderList() {
       for(let i = 0; i < options.length; i++) {
          let li = document.createElement('li');
          let option = document.createElement('button');
@@ -24,14 +33,6 @@ export function dropDownDynamic(selector, options) {
          li.appendChild(option);
          list.appendChild(li);
       }
-
-      menuParent.classList.add(DROP_DOWN_MENU);
-      btn.classList.add(BTN_CLASS_NAME);
-      list.classList.add(LIST_CLASS_NAME);
-
-      menuParent.appendChild(btn);
-      menuParent.appendChild(list);
-
    }
 
    function hendleEvents() {
@@ -47,5 +48,6 @@ export function dropDownDynamic(selector, options) {
    }
 
    render();
+   renderList();
    hendleEvents()
 }

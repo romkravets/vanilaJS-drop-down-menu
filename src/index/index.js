@@ -1,6 +1,7 @@
 import './index.scss';
-import { dropDown, test } from './scripts/drop-down';
+import { dropDown} from './scripts/drop-down';
+import { dropDownDynamic } from './scripts/drop-down-dynamic';
 
 dropDown('#dropDpwnCountries');
-dropDown('#dropDownLanguages');
-test();
+dropDownDynamic('#dropDownLanguages', ['ENGLISH', 'GERMANY', 'ITALIAN', 'TURKISH']);
+dropDownDynamic('#dropDownCurrencies', ['USD', 'EUR', 'CAD', 'UHR', 'FRA']);
