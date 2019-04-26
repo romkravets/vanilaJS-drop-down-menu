@@ -1,6 +1,7 @@
 @import './styles/base.scss';
 .drop-down-menu {
   position: relative;
+  display: inline-block;
   width: 280px;
   &__btn {
     padding: 10px;
