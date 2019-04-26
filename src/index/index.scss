@@ -4,23 +4,33 @@
   display: inline-block;
   width: 280px;
   &__btn {
+    color: rgb(255, 255, 255);
     padding: 10px;
     width: 100%;
     display: block;
-    background-color: yellow;
+    border: none;
+    background-color: rgb(151, 148, 148);
+    cursor: pointer;
+    text-transform: uppercase;
   }
   &__list {
-    background-color: rgb(212, 45, 45);
+    background-color: rgb(249, 249, 249);
     position: absolute;
     width: 100%;
     visibility: hidden;
     transform: scaleY(0);
     transition: all 300ms;
     transform-origin: top;
-    box-shadow: 0 2px 3px 1px rgba(0,0,0, 0.23);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     &_expand {
       visibility: visible;
       transform: scaleY(1);
+    }
+  }
+  &__item {
+    padding: 1rem;
+    &:hover {
+      background-color: rgb(241, 241, 241);
     }
   }
   &__option {
