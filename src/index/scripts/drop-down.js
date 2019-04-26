@@ -12,8 +12,18 @@ export function dropDown(selector) {
       }
    }
 
-   btn.onclick = function() {
+   btn.addEventListener('click', function() {
       list.classList.toggle('drop-down-menu__list_expand');
 
+   });
+}
+
+export function test() {
+   const btns = document.querySelectorAll('.drop-down-menu__option');
+
+   for(let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function(){
+         console.log('CLICED FUNC TEST', i);
+      })
    }
 }
