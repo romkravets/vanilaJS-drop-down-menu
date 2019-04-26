@@ -12,5 +12,14 @@
     background-color: rgb(212, 45, 45);
     position: absolute;
     width: 100%;
+    visibility: hidden;
+    transform: scaleY(0);
+    transition: all 300ms;
+    transform-origin: top;
+    box-shadow: 0 2px 3px 1px rgba(0,0,0, 0.23);
+    &_expand {
+      visibility: visible;
+      transform: scaleY(1);
+    }
   }
 }
